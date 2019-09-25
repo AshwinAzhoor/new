@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD 3.0//EN" 
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.faith.bean.Manufacture" table="manufacture">
+		<id name="mid">
+			<generator class="native"></generator>
+		</id>
+		<property name="name"></property>
+		<set name="products" table="manuproduct" cascade="save-update">
+			<key column="mid"></key>
+			<many-to-many column="pid" class="com.faith.bean.Product"></many-to-many>
+		</set>		
+		
+	
+	</class>
+</hibernate-mapping>
