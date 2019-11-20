@@ -1,0 +1,31 @@
+
+<div>
+    
+    <table class="table" border="1">
+   <thead class="thead-dark"><tr >
+        <th >PID</th>
+        <th>PName</th>
+        <th>pCost</th>
+        <th>Created Date</th>
+        <th>Actions</th>
+    </tr> </thead>
+    <tbody>
+    <tr class="table-warning" *ngFor="let bo of products">
+        <td>{{bo.pId}}</td>
+        <td>{{bo.pName}}</td>
+        <td>{{bo.pCost}}</td>
+        <td>{{bo.screatedDate}}</td>
+        <td><button class="btn btn-success" (click)="getProById(bo.pId)">Update</button> 
+            |
+             <button class="btn btn-danger" (click)="deleteBook(bo.id)">Delete</button></td>
+    </tr></tbody>
+
+</table>
+
+
+
+
+</div>
+<div>
+    <input type="submit" value="add" (click)="add()">
+</div>
